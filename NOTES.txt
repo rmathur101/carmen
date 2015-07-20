@@ -42,6 +42,12 @@ Connect to S3 Database
 
 
 
+Postgres Things
+---------------
+postgres -D /usr/local/var/postgres/
+pg_ctl -D /usr/local/var/postgres/ -l logfile start
+
+
 
 
 
