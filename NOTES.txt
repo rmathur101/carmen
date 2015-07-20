@@ -33,6 +33,7 @@ Data to get:
 Things to Do For Carmen
 ---------------
 Add phones table and many to manys
+Look at valets, buildings, build_garages, sections relationships
 Connect to OAuth2
 Add images to the models
 Connect to S3 Database
