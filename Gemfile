@@ -46,3 +46,10 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+	#heroku assets and logging
+	gem 'rails_12factor'
+end
+
+# specify ruby version
+ruby "2.2.0"
