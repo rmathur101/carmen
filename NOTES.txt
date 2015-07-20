@@ -1,0 +1,74 @@
+
+
+
+
+
+Signup Screen
+---------------
+Data to be given:
+- header (which has the auth token)
+
+Data to get:
+- First name
+- Last name
+- Unit
+- Address
+- State
+- Zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Things to Do For Carmen
+---------------
+Add phones table and many to manys
+Connect to OAuth2
+Add images to the models
+Connect to S3 Database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

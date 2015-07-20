@@ -1,0 +1,30 @@
+# Examples:
+
+# cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+# Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+a1 = Address.create(street: '100 Sunshine Road', city: 'Austin', state: 'Texas', zip: '78704')
+b1 = Building.create(address_id: a1.id)
+unit1 = Unit.create(building_id: b1.id, number: 'A1', max_cars: 2)
+u1 = User.create(email: 'britney@email.com', first_name: 'Britney', last_name: 'Lyons')
+r1 = Resident.create(user_id: u1.id, unit_id: unit1.id)
+c1 = Car.create(model: 'Acura', year: 2007, color: 'red', license: 'XXX')
+rc1 = ResidentCar.create(resident_id: r1.id, car_id: c1.id)
+s1 = Schedule.create(car_id: c1.id, time: Time.now, is_active: true, is_recurring: true)
+s2 = Schedule.create(car_id: c1.id, time: Time.now + 3*10*10, is_active: true, is_recurring: false)
+d1 = Day.create(name: 'Monday')
+d2 = Day.create(name: 'Tuesday')
+d3 = Day.create(name: 'Wednesday')
+sd1 = ScheduleDay.create(schedule_id: s1.id, day_id: d1.id)
+sd2 = ScheduleDay.create(schedule_id: s1.id, day_id: d2.id)
+sd3 = ScheduleDay.create(schedule_id: s2.id, day_id: d2.id)
+
+
+
+
+
+
+
+
+
