@@ -52,4 +52,4 @@ group :production do
 end
 
 # specify ruby version
-ruby "2.2.0"
+ruby "2.0.0"
