@@ -1,8 +1,3 @@
-
-
-
-
-
 Signup Screen
 ---------------
 Data to be given:
@@ -16,31 +11,13 @@ Data to get:
 - State
 - Zip
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Things to Do For Carmen
 ---------------
+Figure out how to generate a secret on the side of the application as well for increased security
 Add phones table and many to manys
 Look at valets, buildings, build_garages, sections relationships
-Connect to OAuth2
 Add images to the models
 Connect to S3 Database
-
-
-
-
 
 Postgres Things
 ---------------
