@@ -37,9 +37,12 @@ heroku run rake db:setup
 HTTP Token Auth Things
 ---------------
 HEROKU
- curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="45cb80f763e9c716058beeb068f7a990"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
+curl https://carmen-stage.herokuapp.com/api/sign_ups
+
+curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
 
 LOCAL
 curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
