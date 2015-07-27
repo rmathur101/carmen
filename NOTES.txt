@@ -27,6 +27,7 @@ pg_ctl -D /usr/local/var/postgres/ -l logfile start
 
 Heroku Commands
 ---------------
+git push heroku master
 heroku pg:reset DATABASE
 heroku run rake db:migrate
 heroku run rake db:seed
