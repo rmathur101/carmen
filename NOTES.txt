@@ -25,9 +25,27 @@ Postgres Things
 postgres -D /usr/local/var/postgres/
 pg_ctl -D /usr/local/var/postgres/ -l logfile start
 
+Heroku Commands
+---------------
+heroku pg:reset DATABASE
+heroku run rake db:migrate
+heroku run rake db:seed
+heroku run rake db:setup
+
+
 HTTP Token Auth Things
 ---------------
+ curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="45cb80f763e9c716058beeb068f7a990"'
+
  curl http://localhost:3000/api/cars -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+
+ curl -d '{"value":"1"}' -X POST -H "application/json" http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+
+
 
 Questions for Britney
 ---------------
