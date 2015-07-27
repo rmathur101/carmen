@@ -1,3 +1,3 @@
 collection @cars => :cars
 
-	attributes :model, :year, :color, :license
+	attributes :model, :year, :color, :license, :id

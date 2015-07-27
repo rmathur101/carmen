@@ -7,7 +7,7 @@ end
 glue :unit do
 	attributes :number, :max_cars
 	glue :address do
-		attributes :street, :state, :zip
+		attributes :street, :city, :state, :zip
 	end
 end
 

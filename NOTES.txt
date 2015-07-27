@@ -16,6 +16,7 @@ Things to Do For Carmen
 Figure out how to generate a secret on the side of the application as well for increased security
 Add phones table and many to manys
 Look at valets, buildings, build_garages, sections relationships
+Create a many to many relationship between api keys and roles so that we only have to give out one key but that will be good for determining multiple roles
 Add images to the models
 Connect to S3 Database
 
@@ -23,6 +24,27 @@ Postgres Things
 ---------------
 postgres -D /usr/local/var/postgres/
 pg_ctl -D /usr/local/var/postgres/ -l logfile start
+
+HTTP Token Auth Things
+---------------
+ curl http://localhost:3000/api/cars -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+
+Questions for Britney
+---------------
+What more do we need to have a secure api besides generating our side of the token?
+
+Answered
+---------------
+Does a user need more than one type of api_key?
+- I don't think so. We can just have another status table for the api keys so that it can have many different 'types'. that means one instance of an api_key can have many different types of relationships with a 'role' of sorts. That would work. If this is the case we can keep the has_one relationship.
+
+Thoughts
+---------------
+So how do I complete the api? I need to think about what data I am giving them, what data they have requested, and what data they still need. Now I am able to send data through the headers. Let us mock the process of the user having an auth token.
+
+The user will get an email with the password they should use to login to the appliction. They should be required to change the password. Once they change the password they are given an api key that will need to be received and stored on their mobile application. So once they get to the sign up page they will already have had their api key. They will then use this api key everytime they make a call to the api to retreive the data that they need. Any other information that I need to send?
+
+So after they go through the login page they will get to the sign up page where they should get the following information:
 
 
 

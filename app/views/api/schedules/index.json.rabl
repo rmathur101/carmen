@@ -1,5 +1,5 @@
 collection @cars => :cars
-	attributes :model, :year, :color, :license
+	attributes :model, :year, :color, :license, :id
 
 child :schedules, :object_root => false do
 	attributes :time, :is_active, :is_recurring

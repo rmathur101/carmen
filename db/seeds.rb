@@ -22,7 +22,7 @@ d3 = Day.create(name: 'Wednesday')
 sd1 = ScheduleDay.create(schedule_id: s1.id, day_id: d1.id)
 sd2 = ScheduleDay.create(schedule_id: s1.id, day_id: d2.id)
 
-ak1 = AuthKey.create(user_id: u1.id)
+ak1 = ApiKey.create(user_id: u1.id, access_token: SecureRandom.hex)
 
 
 
