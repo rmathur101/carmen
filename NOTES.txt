@@ -35,21 +35,23 @@ heroku run rake db:setup
 
 HTTP Token Auth Things
 ---------------
+HEROKU
  curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="45cb80f763e9c716058beeb068f7a990"'
 
- curl http://localhost:3000/api/cars -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
 
- curl -d '{"value":"1"}' -X POST -H "application/json" http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+LOCAL
+curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
-
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="9c7a06f89f5a2493819d2b7b389526c2"'
+LOCAL POST
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
 
 
 
 Questions for Britney
 ---------------
 What more do we need to have a secure api besides generating our side of the token?
+Can we ask them to restrict the max car size on the phone app end?
 
 Answered
 ---------------
