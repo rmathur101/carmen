@@ -13,11 +13,12 @@ Data to get:
 
 Things to Do For Carmen
 ---------------
-Figure out how to generate a secret on the side of the application as well for increased security
+Determine what fields are the required fields
 Add phones table and many to manys
 Look at valets, buildings, build_garages, sections relationships
 Create a many to many relationship between api keys and roles so that we only have to give out one key but that will be good for determining multiple roles
 Add images to the models
+Figure out how to generate a secret on the side of the application as well for increased security
 Connect to S3 Database
 
 Postgres Things
@@ -54,7 +55,7 @@ curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556ce
  SIGN UPS
  curl http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Jackson"}' http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Anakin", "last_name":"Skywalker", "street": "whatever", "city":"tatooine", "unit_number":"100", "state":"IL", "zip":"1"}' http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
 
 
 

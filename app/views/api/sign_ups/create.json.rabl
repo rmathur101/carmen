@@ -10,3 +10,7 @@ glue :unit do
 		attributes :street, :city, :state, :zip
 	end
 end
+
+child :phones do
+	attributes :number
+end

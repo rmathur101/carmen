@@ -24,6 +24,9 @@ sd2 = ScheduleDay.create(schedule_id: s1.id, day_id: d2.id)
 
 ak1 = ApiKey.create(user_id: u1.id, access_token: SecureRandom.hex)
 
+p1 = Phone.create(number: '6303478805')
+up1 = UserPhone.create(phone_id: p1.id, user_id: u1.id)
+
 
 
 

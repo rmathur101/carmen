@@ -4,6 +4,7 @@ class Api::SignUpsController < AuthController
 		@resident = @user.resident
 	end
 
+	#Phone will be created for the first time here
 	def create
 		User.update(@user.id,
 			first_name: sign_up_params[:first_name],
@@ -18,6 +19,8 @@ class Api::SignUpsController < AuthController
 			city: sign_up_params[:city],
 			zip: sign_up_params[:zip]
 		)
+		phone = Phone.create(number: sign_up_params[:phone_number])
+		UserPhone.create(user_id: @user_id, phone_id: phone.id)
 		return @resident = User.find(@user.id).resident
 	end
 
@@ -25,13 +28,13 @@ class Api::SignUpsController < AuthController
 
 	def sign_up_params
 		params.permit(
-			:first_name,
-			:last_name,
-			:street,
-			:unit_number,
-			:state,
-			:city,
-			:zip,
+			:first_name, #check
+			:last_name, #check
+			:street, #check
+			:unit_number, #check
+			:state, #check
+			:city, #check
+			:zip, #check
 			:phone_number,
 			:email,
 			:confirm_email,

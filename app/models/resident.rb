@@ -8,6 +8,7 @@ class Resident < ActiveRecord::Base
 
 	delegate :address, to: :unit
 	delegate :schedules, to: :car
+	delegate :phones, to: :user
 
 	def schedules
 		return Schedule.where("car_id = ?", self.cars.map { |car| car.id })
