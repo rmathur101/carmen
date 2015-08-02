@@ -1,10 +1,5 @@
 class Api::CarsController < AuthController
 
-	#this allows us to prevent the CSRF token authenticity error which is apparently only for requests from the browser - investigate; wonder how this would integrate with angular?
-	skip_before_filter  :verify_authenticity_token
-
-	before_action :authenticate
-
 	def index
 		# @user data populated by authenticate
 		resident = @user.resident
