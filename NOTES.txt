@@ -13,11 +13,12 @@ Data to get:
 
 Things to Do For Carmen
 ---------------
-Figure out how to generate a secret on the side of the application as well for increased security
+Determine what fields are the required fields
 Add phones table and many to manys
 Look at valets, buildings, build_garages, sections relationships
 Create a many to many relationship between api keys and roles so that we only have to give out one key but that will be good for determining multiple roles
 Add images to the models
+Figure out how to generate a secret on the side of the application as well for increased security
 Connect to S3 Database
 
 Postgres Things
@@ -50,6 +51,17 @@ curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token=
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
 
 LOCAL
+
+CARS
+curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+SIGN UPS
+curl http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Anakin", "last_name":"Skywalker", "street": "whatever", "city":"tatooine", "unit_number":"100", "state":"IL", "zip":"1", "phone_number":"1234", "password": "1234", "confirm_password": "1234"}' http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
 curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
 curl http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
@@ -68,7 +80,7 @@ LOCAL POST
   curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name": "Schedule 4", "car_id": "1", "time": "2000-01-01 03:05:40 UTC", "is_active": "true", "is_recurring": "true", "days":[1,3,5]}' http://localhost:3000/api/schedules/edit/4 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
  curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/delete/3 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
- 
+
 *Delete and view header response*
  curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' -D- http://localhost:3000/api/schedules/delete/8 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"
 

@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # rabl
 gem 'rabl', '~> 0.11.6'
-gem 'omniauth'
+gem 'bcrypt', '~> 3.1.7'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

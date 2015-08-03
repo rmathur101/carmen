@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726220106) do
+ActiveRecord::Schema.define(version: 20150802232120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,19 @@ ActiveRecord::Schema.define(version: 20150726220106) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "phone_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.integer  "phone_type_id"
+    t.string   "number"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "requests", force: :cascade do |t|
@@ -137,14 +150,21 @@ ActiveRecord::Schema.define(version: 20150726220106) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "user_phones", force: :cascade do |t|
+    t.integer  "phone_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "valet_garages", force: :cascade do |t|
