@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     post '/schedules/edit/:id' => 'schedules#edit', :as => :edit_schedule
     post '/schedules/delete/:id' => 'schedules#delete', :as => :delete_schedule
 
+    # Days controller
+    resources :days, :only => [:index]
+
     # Requests controller
     post '/requests' => 'requests#create', :as => :create_request
     post '/requests/cancel' => 'requests#cancel', :as => :cancel_request

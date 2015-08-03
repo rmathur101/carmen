@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20150726220106) do
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "car_id"
+    t.string   "name"
     t.time     "time"
     t.boolean  "is_active"
     t.boolean  "is_recurring"
