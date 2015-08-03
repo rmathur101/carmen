@@ -56,16 +56,21 @@ curl http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676
 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/edit/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
-curl http://localhost:3000/api/schedules/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+curl http://localhost:3000/api/schedules/7 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
 LOCAL POST
  curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name": "Schedule 3", "car_id": "1", "time": "2000-01-01 03:05:40 UTC", "is_active": "true", "is_recurring": "true", "days":[1,4,5]}' http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name": "Schedule to delete", "car_id": "1", "time": "2000-01-01 03:05:40 UTC", "is_active": "true", "is_recurring": "true", "days":[1,4,5]}' http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
+  curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name": "Schedule 4", "car_id": "1", "time": "2000-01-01 03:05:40 UTC", "is_active": "true", "is_recurring": "true", "days":[1,3,5]}' http://localhost:3000/api/schedules/edit/4 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/delete/3 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+ 
+*Delete and view header response*
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' -D- http://localhost:3000/api/schedules/delete/8 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"
 
 Questions for Britney
 ---------------

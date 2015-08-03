@@ -12,7 +12,7 @@ class Api::SchedulesController < AuthController
 	### Creates a new schedule
 	def create
 		scheduled_car = @user.resident.cars.find(params[:car_id])
-		@schedule = Schedule.create(schedule_params)
+		@schedule = Schedule.create(create_schedule_params)
 		params[:days].each do |d|
 			@schedule.schedule_days << ScheduleDay.create(day_id: d, schedule_id: @schedule.id)
 		end
@@ -20,19 +20,32 @@ class Api::SchedulesController < AuthController
 	end
 
 	def edit
-		puts "I am here"
-		puts params
-		render json: "{data: ok}"
+		@schedule = @user.resident.schedules.find(params[:id])
+		@schedule.update(update_schedule_params)
+		@schedule.schedule_days.clear
+		params[:days].each do |d|
+			@schedule.schedule_days << ScheduleDay.create(day_id: d, schedule_id: @schedule.id)
+		end
 	end
 
 	def delete
-		render json: "{data: ok}"
+		schedule = @user.resident.schedules.find(params[:id])
+		schedule = schedule.destroy
+		if schedule.destroyed?
+			render :nothing => true, :status => 204
+		else
+			render :nothing => true, :status => 500
+		end
 	end
 
 	private
 
-	def schedule_params
+	def create_schedule_params
 		return params.permit(:name, :time, :is_active, :is_recurring)
+	end
+
+	def update_schedule_params
+		return params.permit(:name, :time, :car_id, :is_active, :is_recurring)
 	end
 
 end
