@@ -1,5 +1,4 @@
-collection @schedules => :schedules
-attribute :id => :schedule_id
+object @schedule
 attributes :name, :time, :is_active, :is_recurring
 
 child :car, :object_root => false do
