@@ -4,7 +4,10 @@ b1 = Building.create(address_id: a1.id)
 
 unit1 = Unit.create(building_id: b1.id, number: 'A1', max_cars: 2)
 
-u1 = User.create(email: 'britney@email.com', first_name: 'Britney', last_name: 'Lyons')
+u1 = User.new(email: 'britney@email.com', first_name: 'Britney', last_name: 'Lyons')
+u1.password = 'testing123'
+u1.password_confirmation = "testing123"
+u1.save
 
 r1 = Resident.create(user_id: u1.id, unit_id: unit1.id)
 

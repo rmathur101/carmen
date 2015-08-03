@@ -11,6 +11,6 @@ glue :unit do
 	end
 end
 
-child :phones do
+child :phones, :object_root => false do
 	attributes :number
 end
