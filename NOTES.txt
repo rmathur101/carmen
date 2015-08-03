@@ -48,14 +48,14 @@ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -
 LOCAL
 
 CARS
-curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="7ba0b98643c3a29435da1d47db8fd030"'
+curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="7ba0b98643c3a29435da1d47db8fd030"'
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
- SIGN UPS
- curl http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="7ba0b98643c3a29435da1d47db8fd030"'
+SIGN UPS
+curl http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Anakin", "last_name":"Skywalker", "street": "whatever", "city":"tatooine", "unit_number":"100", "state":"IL", "zip":"1", "phone_number":"1234"}' http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="7ba0b98643c3a29435da1d47db8fd030"'
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Anakin", "last_name":"Skywalker", "street": "whatever", "city":"tatooine", "unit_number":"100", "state":"IL", "zip":"1", "phone_number":"1234", "password": "1234", "confirm_password": "1234"}' http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
 
 
