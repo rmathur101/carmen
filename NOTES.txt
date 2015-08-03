@@ -22,6 +22,7 @@ Connect to S3 Database
 
 Postgres Things
 ---------------
+createuser -s -r rmathur101
 postgres -D /usr/local/var/postgres/
 pg_ctl -D /usr/local/var/postgres/ -l logfile start
 
@@ -36,6 +37,10 @@ heroku run rake db:setup
 
 HTTP Token Auth Things
 ---------------
+GET API TOKEN
+u=User.First
+u.api_key
+
 HEROKU
 
 curl https://carmen-stage.herokuapp.com/api/sign_ups
@@ -45,10 +50,20 @@ curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token=
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
 
 LOCAL
-curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
+curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+
+curl http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/edit/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+
+curl http://localhost:3000/api/schedules/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/schedules/1 -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
 LOCAL POST
- curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="ff1463556cea9b20ef55e8c7f15aae3d"'
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
+
+ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name": "Schedule 3", "car_id": "1", "time": "2000-01-01 03:05:40 UTC", "is_active": "true", "is_recurring": "true", "days":[1,4,5]}' http://localhost:3000/api/schedules/ -H 'Authorization: Token token="74b676482f500c56ef66462949a20c4e"'
 
 
 
@@ -71,6 +86,17 @@ The user will get an email with the password they should use to login to the app
 
 So after they go through the login page they will get to the sign up page where they should get the following information:
 
+
+
+
+
+
+
+BRITNEY'S RUBY FAIL KNOWLEDGE
+=================================
+DATABASE
+Drop database: rake db:drop
+Create, migrate, & seed: rake db:setup
 
 
 
