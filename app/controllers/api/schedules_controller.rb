@@ -19,6 +19,7 @@ class Api::SchedulesController < AuthController
 		scheduled_car.schedules << @schedule
 	end
 
+	### Edits an existing schedule
 	def edit
 		@schedule = @user.resident.schedules.find(params[:id])
 		@schedule.update(update_schedule_params)
@@ -28,6 +29,7 @@ class Api::SchedulesController < AuthController
 		end
 	end
 
+	### Deletes an existing schedule
 	def delete
 		schedule = @user.resident.schedules.find(params[:id])
 		schedule = schedule.destroy
