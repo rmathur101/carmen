@@ -57,6 +57,14 @@ curl http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0
 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "BMW", "color": "blue", "year": "2015", "license":"XXX"}' http://localhost:3000/api/cars/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
+curl http://localhost:3000/api/cars/1 -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model":"Ferarri", "color":"red", "year": "2011", "license":"new"}' http://localhost:3000/api/cars/edit/1 -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://localhost:3000/api/cars/delete/3 -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
+curl http://localhost:3000/api/profiles/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
+
 SIGN UPS
 curl http://localhost:3000/api/sign_ups/ -H 'Authorization: Token token="16c7dcc85e0f8fd3d74780b3f208a9a3"'
 
