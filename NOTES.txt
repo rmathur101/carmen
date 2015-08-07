@@ -44,9 +44,9 @@ u.api_key
 
 HEROKU
 
-curl https://carmen-stage.herokuapp.com/api/sign_ups
+curl https://carmen-stage.herokuapp.com/api/sign_ups -H 'Authorization: Token token="53fba0a90a1aeffaab3b7cf8b5daa0d5"'
 
-curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
+curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="53fba0a90a1aeffaab3b7cf8b5daa0d5"'
 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
 
