@@ -1,0 +1,35 @@
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 96169) running in data directory "/usr/local/var/postgres"?
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 61649) running in data directory "/usr/local/var/postgres"?
+LOG:  database system was shut down at 2015-08-02 20:56:46 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "rmathur101" does not exist
+FATAL:  role "rmathur101" does not exist
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  argument of WHERE must be type boolean, not type record at character 45
+STATEMENT:  SELECT "schedules".* FROM "schedules" WHERE (car_id = 1,2)
+ERROR:  argument of WHERE must be type boolean, not type record at character 45
+STATEMENT:  SELECT "schedules".* FROM "schedules" WHERE (car_id = 1,2)
+ERROR:  argument of WHERE must be type boolean, not type record at character 45
+STATEMENT:  SELECT "schedules".* FROM "schedules" WHERE (car_id = 1,2)
+ERROR:  argument of WHERE must be type boolean, not type record at character 45
+STATEMENT:  SELECT "schedules".* FROM "schedules" WHERE (car_id = 1,2)
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" is being accessed by other users
+DETAIL:  There are 2 other sessions using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "app"
+ERROR:  database "app" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "app"
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
