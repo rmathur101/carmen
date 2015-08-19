@@ -44,11 +44,28 @@ u.api_key
 
 HEROKU
 
-curl https://carmen-stage.herokuapp.com/api/sign_ups -H 'Authorization: Token token="53fba0a90a1aeffaab3b7cf8b5daa0d5"'
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"first_name":"Anakin", "last_name":"Skywalker", "street": "whatever", "city":"tatooine", "unit_number":"100", "state":"IL", "zip":"1", "phone_number":"1234", "password": "1234", "confirm_password": "1234"}' https://carmen-stage.herokuapp.com/api/sign_ups -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
 
-curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="53fba0a90a1aeffaab3b7cf8b5daa0d5"'
+api/sign_ups GET
+curl https://carmen-stage.herokuapp.com/api/sign_ups -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="6920ab7d57c3f0b4f5d8e497ab9f282e"'
+api/cars GET
+curl https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
+
+api/cars POST
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model": "Maruti", "color": "blue", "year": "2015", "license":"XXX"}' https://carmen-stage.herokuapp.com/api/cars -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
+
+api/cars/:id GET
+curl https://carmen-stage.herokuapp.com/api/cars/1 -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
+
+api/cars/edit/:id POST
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"model":"Ferarri", "color":"red", "year": "2011", "license":"new"}' http://carmen-stage.herokuapp.com/api/cars/edit/1 -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
+
+api/cars/delete/:id POST
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{}' http://carmen-stage.herokuapp.com/api/cars/delete/1 -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
+
+api/profiles GET
+curl http://carmen-stage.herokuapp.com/api/profiles -H 'Authorization: Token token="09a29d234d8c4f5d3c2b7eddaed3f965"'
 
 LOCAL
 
