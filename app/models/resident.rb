@@ -8,10 +8,6 @@ class Resident < ActiveRecord::Base
 	belongs_to :unit
 
 	delegate :address, to: :unit
-	#delegate :schedules, to: :cars
-
-	# def schedules
-	# 	return Schedule.where("car_id = ?", self.cars.map { |car| car.id })
-	# end
+	delegate :phones, to: :user
 
 end

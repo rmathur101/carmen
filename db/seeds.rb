@@ -4,7 +4,10 @@ b1 = Building.create(address_id: a1.id)
 
 unit1 = Unit.create(building_id: b1.id, number: 'A1', max_cars: 2)
 
-u1 = User.create(email: 'britney@email.com', first_name: 'Britney', last_name: 'Lyons')
+u1 = User.new(email: 'britney@email.com', first_name: 'Britney', last_name: 'Lyons')
+u1.password = 'testing123'
+u1.password_confirmation = "testing123"
+u1.save
 
 r1 = Resident.create(user_id: u1.id, unit_id: unit1.id)
 
@@ -30,6 +33,9 @@ sd3 = ScheduleDay.create(schedule_id: s2.id, day_id: d4.id)
 sd4 = ScheduleDay.create(schedule_id: s2.id, day_id: d6.id)
 
 ak1 = ApiKey.create(user_id: u1.id, access_token: SecureRandom.hex)
+
+p1 = Phone.create(number: '6303478805')
+up1 = UserPhone.create(phone_id: p1.id, user_id: u1.id)
 
 
 
