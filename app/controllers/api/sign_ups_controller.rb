@@ -5,7 +5,7 @@ class Api::SignUpsController < AuthController
 	end
 
 	def create
-		if check_password_match(sign_up_params)
+		if check_password_match
 			User.update(@user.id,
 				first_name: sign_up_params[:first_name],
 				last_name: sign_up_params[:last_name]
@@ -19,9 +19,12 @@ class Api::SignUpsController < AuthController
 				city: sign_up_params[:city],
 				zip: sign_up_params[:zip]
 			)
-			phone = Phone.create(number: sign_up_params[:phone_number])
-			UserPhone.create(user_id: @user_id, phone_id: phone.id)
-			@user.password = sign_up_params[:password]
+			# TODO: Someday we want them to be able to add multiple phone numbers,
+			# but for now we're only allowing one so we're clearing out all the phone
+			# numbers before adding the new one
+			@user.phones.clear
+			@user.phones << Phone.create(number: sign_up_params[:phone_number])
+			@user.password = sign_up_params[:new_password]
 			@user.password_confirmation = sign_up_params[:confirm_password]
 			return @resident = User.find(@user.id).resident
 		else
@@ -42,18 +45,7 @@ class Api::SignUpsController < AuthController
 			:zip,
 			:phone_number,
 			:email,
-			:confirm_email,
-			:password,
-			:confirm_password
+			:confirm_email
 		)
 	end
-
-	def check_password_match(params)
-		if params[:password] == params[:confirm_password] && params[:password] && params[:password] && params[:confirm_password]
-			return true
-		else
-			return false
-		end
-	end
-
 end

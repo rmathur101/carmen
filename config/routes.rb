@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     post '/profiles/edit' => 'profiles#edit', :as => :edit_profile
 
     # Settings controller
-    post '/settings/update_password' => 'settings#update_password', :as => :update_password
+    post '/settings/change_password' => 'settings#change_password', :as => :change_password
     post '/settings/update' => 'settings#update', :as => :update_settings
 
     # Garages controller
