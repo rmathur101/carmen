@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     # Settings controller
     post '/settings/change_password' => 'settings#change_password', :as => :change_password
     post '/settings/update' => 'settings#update', :as => :update_settings
+    get '/settings' => 'settings#index', :as => :get_settings
 
     # Garages controller
     resources :garages, :only => [:index]

@@ -1,6 +1,5 @@
 class Api::SettingsController < AuthController
   def change_password
-
   	if @user.authenticate(params[:current_password])
 	  	if check_password_match
 	  		@user.password = params[:new_password]
@@ -16,6 +15,17 @@ class Api::SettingsController < AuthController
 	end
   end
 
+  def index
+  	@user
+  end
+
   def update
+  	@user.update(update_settings_params)
+  end
+
+  private
+
+  def update_settings_params
+  	params.permit(:enable_notifications)
   end
 end

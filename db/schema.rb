@@ -163,8 +163,9 @@ ActiveRecord::Schema.define(version: 20150802232120) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "enable_notifications", default: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "valet_garages", force: :cascade do |t|
