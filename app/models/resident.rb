@@ -9,5 +9,6 @@ class Resident < ActiveRecord::Base
 
 	delegate :address, to: :unit
 	delegate :phones, to: :user
+	delegate :building, to: :unit
 
 end

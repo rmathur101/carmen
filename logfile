@@ -33,3 +33,64 @@ ERROR:  database "app" already exists
 STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
 ERROR:  database "app" already exists
 STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+LOG:  database system was shut down at 2015-08-29 16:43:31 CDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+FATAL:  database "app" does not exist
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "app"
+ERROR:  database "app" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "app"
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  relation "building_garage_phones" does not exist at character 323
+STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"building_garage_phones"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  relation "building_garage_phones" does not exist at character 323
+STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"building_garage_phones"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+ERROR:  database "app" already exists
+STATEMENT:  CREATE DATABASE "app" ENCODING = 'unicode'
+WARNING:  worker took too long to start; canceled
+WARNING:  autovacuum worker started without a worker entry
+WARNING:  worker took too long to start; canceled
+WARNING:  autovacuum worker started without a worker entry
+WARNING:  worker took too long to start; canceled
+WARNING:  autovacuum worker started without a worker entry
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2015-09-26 17:47:19 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :password_digest
     	t.string :first_name
     	t.string :last_name
-    	t.string :phone
       t.boolean :enable_notifications, default: true
       t.timestamps null: false
     end
