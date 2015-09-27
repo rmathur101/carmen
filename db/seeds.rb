@@ -21,8 +21,13 @@ up1 = UserPhone.create(phone_id: p2.id, user_id: u1.id)
 
 r1 = Resident.create(user_id: u1.id, unit_id: unit1.id)
 
+s1 = Status.create(id: 1, name: 'Requested for Pickup')
+s2 = Status.create(id: 2, name: 'Being Retrieved')
+s3 = Status.create(id: 3, name: 'Parked in Garage')
+s4 = Status.create(id: 4, name: 'In Use by Resident')
+
 # Add cars to the first resident
-c1 = Car.create(model: 'Acura', year: 2007, color: 'red', license: 'XXX')
+c1 = Car.create(model: 'Acura', year: 2007, color: 'red', license: 'XXX', status_id: s3.id)
 rc1 = ResidentCar.create(resident_id: r1.id, car_id: c1.id)
 
 # Define the days of the week
