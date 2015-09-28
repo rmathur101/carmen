@@ -7,6 +7,7 @@ class InputValidationException < ApiException
 		NotAllRequiredCharsUsed = 4225
 		FormatInvalid = 4226
 		FieldsMustMatch = 4227
+		IncorrectPassword = 4228
 	end
 
 	HTTP_STATUS = 422
