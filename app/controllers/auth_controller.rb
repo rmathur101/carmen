@@ -8,15 +8,31 @@ class AuthController < ApplicationController
 		private
 
 			def authenticate
-				authenticate_or_request_with_http_token do |token, options|
-					if ApiKey.exists?(access_token: token)
+				authenticate_token || render_token_missing
+			end
+
+			def authenticate_token
+				authenticate_with_http_token do |token, options|
+					if token.blank?
+						raise UnauthorizedRequestException.new(UnauthorizedRequestException::Codes::TokenMissing, 
+							"Error with authentication, please log out and log back in", 
+							"No authentication token sent")
+					elsif ApiKey.exists?(access_token: token)
 						@user = ApiKey.find_by(access_token: token).user
 						return true
+					else
+						raise UnauthorizedRequestException.new(UnauthorizedRequestException::Codes::TokenExpired, 
+							"Error with authentication, please log out and log back in", 
+							"Expired or invalid authentication token sent")
 					end
 				end
 			end
-			#TODO: what happens if authentication does not take place?
 
+			def render_token_missing
+				raise UnauthorizedRequestException.new(UnauthorizedRequestException::Codes::TokenMissing, 
+					"Error with authentication, please log out and log back in", 
+					"No authentication token sent")
+			end
 end
 
 

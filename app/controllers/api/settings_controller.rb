@@ -2,7 +2,7 @@ class Api::SettingsController < AuthController
   def change_password
     verify_change_password_params
     verify_change_password_param_values
-    
+
   	if @user.authenticate(params[:current_password])
 	  	@user.password = params[:new_password]
 			@user.password_confirmation = params[:confirm_password]
@@ -21,7 +21,9 @@ class Api::SettingsController < AuthController
   end
 
   def update
-  	@user.update(update_settings_params)
+    verify_update_params
+
+  	@user.update(enable_notifications: params[:enable_notifications])
   end
 
   private
@@ -36,7 +38,7 @@ class Api::SettingsController < AuthController
     User.validate_password(params[:new_password], params[:confirm_password])
   end
 
-  def update_settings_params
-  	params.permit(:enable_notifications)
+  def verify_update_params
+    verify_param_exists(:enable_notifications)
   end
 end

@@ -3,18 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def check_password_match
-  		params.permit(
-			:new_password,
-			:confirm_password
-		)
-		if params[:new_password] == params[:confirm_password] && params[:new_password] && params[:new_password] && params[:confirm_password]
-			return true
-		else
-			return false
-		end
-	end
-
 	def verify_param_exists(param_to_verify)
 		if (!params.has_key?(param_to_verify))
 			param_name = param_to_verify.to_s
