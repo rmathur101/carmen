@@ -24,6 +24,8 @@ module Carmen
     config.active_record.raise_in_transactional_callbacks = true
     #Rails play nice with Bower
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    # Don't load model subfolders into different namespaces 
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
   end
 end
 
